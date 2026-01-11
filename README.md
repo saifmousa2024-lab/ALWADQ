@@ -407,15 +407,4 @@
     <div class="container">
       <div class="row">
         <div>
-          <div class="brand" style="margin-bottom:8px;"><span class="logo"></span><span>Al-Wadaq</span></div>
-          <div class="small" data-i18n="footer_tagline">Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq</div>
-        </div>
-        <div class="small">© <span id="year"></span> Al-Wadaq — <span data-i18n="footer_rights">All rights reserved</span></div>
-      </div>
-    </div>
-  </footer>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="assets/js/i18n.js"></script>
-</body>
-</html>
-
+         
