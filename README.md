@@ -1,330 +1,151 @@
-(function () {
-  const LS_LANG = "alwadaq_lang";
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  const I18N = {
-    ar: {
-      dir: "rtl",
-      nav_home: "الرئيسية",
-      nav_about: "من نحن",
-      nav_products: "المنتجات",
-      nav_contact: "تواصل معنا",
-      lang_btn: "English",
+  <title>Al-Wadaq Wallpaper | شركة الودق لصناعة ورق الجدران المحدودة</title>
+  <meta name="description" content="Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq. Manufacturer of wallpapers with multiple materials and finishes for residential and commercial projects." />
 
-      // Shared footer
-      footer_tagline: "شركة الودق لصناعة ورق الجدران المحدودة — العراق، بابل",
-      footer_rights: "جميع الحقوق محفوظة",
-      phone_label: "الهاتف",
-      email_label: "البريد",
-      address_label: "العنوان",
+  <!-- Open Graph -->
+  <meta property="og:title" content="Al-Wadaq Wallpaper Manufacturing Co. Ltd" />
+  <meta property="og:description" content="Wallpaper manufacturer in Babel, Iraq — materials, finishes, and project supply." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_IQ" />
 
-      // Home
-      home_badge: "مصنع ورق جدران — جودة وتصاميم معاصرة",
-      home_title: "شركة الودق لصناعة ورق الجدران المحدودة",
-      home_sub:
-        "نصنع ورق جدران بمواصفات تشغيلية عالية، مع تنوع واسع في الخامات والتشطيبات. نخدم الأسواق المحلية والمشاريع التجارية والسكنية في العراق.",
-      home_cta_products: "استعراض المنتجات",
-      home_cta_quote: "اطلب عرض سعر",
-      kpi1: "تصاميم متعددة",
-      kpi2: "خامات وتشطيبات",
-      kpi3: "توريد للمشاريع",
-      kpi4: "ضبط جودة",
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
 
-      home_why_title: "لماذا الودق؟",
-      home_why_1_t: "جودة قابلة للقياس",
-      home_why_1_d: "رقابة على السماكة، ثبات اللون، ومقاومة الاستخدام وفق متطلبات المشاريع.",
-      home_why_2_t: "تنوع في المواد",
-      home_why_2_d: "Vinyl، Non-woven، وتشطيبات مطفية/لامعة حسب خطوط المنتج.",
-      home_why_3_t: "جاهزية توريد",
-      home_why_3_d: "إدارة طلبات وجدولة تسليم لدعم المقاولين والموزعين.",
+  <header class="nav">
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="index.html" aria-label="Al-Wadaq">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Al-Wadaq</span>
+        </a>
 
-      home_services_title: "ماذا نقدم؟",
-      home_services_li1: "ورق جدران للاستخدام السكني والتجاري.",
-      home_services_li2: "تشكيلات مودرن وكلاسيك وخيارات حسب الطلب للمشاريع.",
-      home_services_li3: "توصيات تركيب وخدمات دعم للموزعين.",
-      home_services_li4: "تسعير بالجملة للموزعين وشركات التنفيذ.",
+        <button id="menuBtn" class="btn menu-btn" type="button">Menu</button>
 
-      // About
-      about_badge: "من نحن",
-      about_title: "خبرة صناعية محلية تدعم جودة المنتج واستقرار التوريد.",
-      about_p:
-        "شركة الودق لصناعة ورق الجدران المحدودة تعمل في محافظة بابل — العراق. نركز على جودة المواد، دقة الطباعة، وثبات الألوان مع تطوير مستمر في التصاميم بما يلائم ذوق السوق.",
-      about_vision_t: "رؤيتنا",
-      about_vision_p: "أن نكون الخيار الأول لورق الجدران المصنّع محلياً في العراق من حيث الجودة والتنوع.",
-      about_values_t: "قيمنا",
-      about_val1: "الجودة والانضباط التشغيلي.",
-      about_val2: "الشفافية في المواصفات والطلب.",
-      about_val3: "الابتكار في التصميم والخامة.",
-      about_val4: "خدمة العملاء وشراكات التوريد.",
+        <nav id="navLinks" class="links" aria-label="Navigation">
+          <a class="link" data-nav href="index.html" data-i18n="nav_home">Home</a>
+          <a class="link" data-nav href="about.html" data-i18n="nav_about">About</a>
+          <a class="link" data-nav href="products.html" data-i18n="nav_products">Products</a>
+          <a class="link" data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
+        </nav>
 
-      // Products
-      prod_badge: "المنتجات",
-      prod_title: "منتجات ورق جدران بخيارات متعددة للخامة والتشطيب.",
-      prod_p:
-        "اختر الفئة المناسبة واطلب عينات أو عرض سعر. يمكن توفير مواصفات خاصة للمشاريع حسب الكمية.",
-      prod_cta_contact: "اطلب عينات/سعر",
+        <div class="nav-actions">
+          <button id="langBtn" class="btn" type="button">English</button>
+          <a class="btn primary" href="contact.html" data-i18n="home_cta_quote">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-      p1_tag: "Vinyl",
-      p1_name: "ورق جدران فينيل",
-      p1_desc: "مقاومة أعلى للرطوبة وسهولة تنظيف، مناسب للمنازل والمكاتب.",
+  <main>
+    <section class="section">
+      <div class="container hero">
+        <div class="card">
+          <span class="badge" data-i18n="home_badge">Wallpaper manufacturer — quality and modern designs</span>
+          <h1 data-i18n="home_title">Al-Wadaq Wallpaper Manufacturing Co. Ltd</h1>
+          <p data-i18n="home_sub">
+            We manufacture high-quality wallpapers with a wide range of materials and finishes...
+          </p>
 
-      p2_tag: "Non-woven",
-      p2_name: "Non-woven",
-      p2_desc: "تركيب أسهل وثبات أفضل، مناسب لمساحات كبيرة ومشاريع.",
+          <div class="actions">
+            <a class="btn primary" href="products.html" data-i18n="home_cta_products">View Products</a>
+            <a class="btn" href="contact.html" data-i18n="home_cta_quote">Request a Quote</a>
+          </div>
 
-      p3_tag: "Classic",
-      p3_name: "كلاسيك",
-      p3_desc: "نقوش كلاسيكية وألوان متوازنة للديكورات التقليدية.",
+          <div class="hr"></div>
 
-      p4_tag: "Modern",
-      p4_name: "مودرن",
-      p4_desc: "تصاميم عصرية وخطوط بسيطة لمظهر حديث.",
+          <div class="kpis">
+            <div class="kpi"><strong data-i18n="kpi1">Multiple designs</strong><span>—</span></div>
+            <div class="kpi"><strong data-i18n="kpi2">Materials & finishes</strong><span>—</span></div>
+            <div class="kpi"><strong data-i18n="kpi3">Project supply</strong><span>—</span></div>
+            <div class="kpi"><strong data-i18n="kpi4">Quality control</strong><span>—</span></div>
+          </div>
+        </div>
 
-      p5_tag: "Kids",
-      p5_name: "غرف الأطفال",
-      p5_desc: "ألوان مبهجة وخيارات آمنة مناسبة لغرف الأطفال.",
+        <div class="card">
+          <h2 style="margin-top:0;" data-i18n="home_why_title">Why Al-Wadaq?</h2>
 
-      p6_tag: "Custom",
-      p6_name: "حسب الطلب للمشاريع",
-      p6_desc: "تنفيذ تصميم/مواصفة خاصة عند توفر الحد الأدنى للطلب.",
+          <div class="grid" style="margin-top:14px;">
+            <div class="card" style="background:rgba(255,255,255,.04);">
+              <strong data-i18n="home_why_1_t">Measurable quality</strong>
+              <div class="small" data-i18n="home_why_1_d">Controls for thickness, color consistency...</div>
+            </div>
+            <div class="card" style="background:rgba(255,255,255,.04);">
+              <strong data-i18n="home_why_2_t">Material variety</strong>
+              <div class="small" data-i18n="home_why_2_d">Vinyl, non-woven...</div>
+            </div>
+            <div class="card" style="background:rgba(255,255,255,.04);">
+              <strong data-i18n="home_why_3_t">Supply readiness</strong>
+              <div class="small" data-i18n="home_why_3_d">Order management and delivery scheduling...</div>
+            </div>
+          </div>
 
-      // Contact
-      contact_badge: "تواصل معنا",
-      contact_title: "للعينات، التسعير بالجملة، أو توريد المشاريع — تواصل الآن.",
-      contact_p:
-        "املأ النموذج وسنرد عليك. في الموقع الحقيقي يتم ربط النموذج ببريد الشركة/CRM (هنا نسخة جاهزة للربط).",
-      c_company: "الشركة (اختياري)",
-      c_name: "الاسم",
-      c_email: "البريد الإلكتروني",
-      c_phone: "الهاتف (اختياري)",
-      c_need: "نوع الطلب",
-      c_details: "تفاصيل الطلب",
-      c_submit: "إرسال",
+          <div class="hr"></div>
 
-      need1: "عينات",
-      need2: "تسعير جملة",
-      need3: "مشروع (توريد)",
-      need4: "شراكة توزيع",
+          <div class="notice">
+            <div><strong data-i18n="address_label">Address</strong>: <span data-i18n="city">Babel, Iraq</span></div>
+            <div style="margin-top:6px;"><strong data-i18n="phone_label">Phone</strong>: +964 7XX XXX XXXX</div>
+            <div><strong data-i18n="email_label">Email</strong>: info@alwadaq-wallpaper.com</div>
+            <div class="small" style="margin-top:8px;">
+              ملاحظة: استبدل الهاتف والبريد بالداتا الحقيقية قبل النشر.
+            </div>
+          </div>
 
-      contact_info_title: "بيانات الشركة",
-      city: "العراق — بابل",
-      map_title: "الموقع على الخريطة",
-      whatsapp_btn: "واتساب"
-    },
+        </div>
+      </div>
+    </section>
 
-    en: {
-      dir: "ltr",
-      nav_home: "Home",
-      nav_about: "About",
-      nav_products: "Products",
-      nav_contact: "Contact",
-      lang_btn: "العربية",
+    <section class="section" style="padding-top:0;">
+      <div class="container grid" style="grid-template-columns:1fr 1fr; align-items:stretch;">
+        <div class="card">
+          <h2 style="margin-top:0;" data-i18n="home_services_title">What we offer</h2>
+          <ul style="color:var(--muted);margin:10px 0 0; padding-inline-start:18px;">
+            <li data-i18n="home_services_li1">Wallpaper for residential and commercial use.</li>
+            <li data-i18n="home_services_li2">Modern/classic collections and project-ready customization options.</li>
+            <li data-i18n="home_services_li3">Installation guidance and distributor support.</li>
+            <li data-i18n="home_services_li4">Wholesale pricing for distributors and contractors.</li>
+          </ul>
+        </div>
 
-      footer_tagline: "Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq",
-      footer_rights: "All rights reserved",
-      phone_label: "Phone",
-      email_label: "Email",
-      address_label: "Address",
+        <div class="card">
+          <h2 style="margin-top:0;">Quick Links</h2>
+          <p class="small">Explore products or send an inquiry.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a class="btn primary" href="products.html" data-i18n="nav_products">Products</a>
+            <a class="btn" href="contact.html" data-i18n="nav_contact">Contact</a>
+            <a class="btn" href="about.html" data-i18n="nav_about">About</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      home_badge: "Wallpaper manufacturer — quality and modern designs",
-      home_title: "Al-Wadaq Wallpaper Manufacturing Co. Ltd",
-      home_sub:
-        "We manufacture high-quality wallpapers with a wide range of materials and finishes. We serve local Iraqi markets and support residential and commercial projects.",
-      home_cta_products: "View Products",
-      home_cta_quote: "Request a Quote",
-      kpi1: "Multiple designs",
-      kpi2: "Materials & finishes",
-      kpi3: "Project supply",
-      kpi4: "Quality control",
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="brand" style="margin-bottom:8px;">
+            <span class="logo" aria-hidden="true"></span>
+            <span>Al-Wadaq</span>
+          </div>
+          <div class="small" data-i18n="footer_tagline">Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq</div>
+        </div>
 
-      home_why_title: "Why Al-Wadaq?",
-      home_why_1_t: "Measurable quality",
-      home_why_1_d: "Controls for thickness, color consistency, and durability based on project needs.",
-      home_why_2_t: "Material variety",
-      home_why_2_d: "Vinyl, non-woven, and matte/gloss finishes across product lines.",
-      home_why_3_t: "Supply readiness",
-      home_why_3_d: "Order management and delivery scheduling for contractors and distributors.",
+        <div class="small">
+          <div><span data-i18n="phone_label">Phone</span>: +964 7XX XXX XXXX</div>
+          <div><span data-i18n="email_label">Email</span>: info@alwadaq-wallpaper.com</div>
+          <div>© <span id="year"></span> Al-Wadaq — <span data-i18n="footer_rights">All rights reserved</span></div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-      home_services_title: "What we offer",
-      home_services_li1: "Wallpaper for residential and commercial use.",
-      home_services_li2: "Modern/classic collections and project-ready customization options.",
-      home_services_li3: "Installation guidance and distributor support.",
-      home_services_li4: "Wholesale pricing for distributors and contractors.",
-
-      about_badge: "About",
-      about_title: "Local manufacturing with dependable quality and stable supply.",
-      about_p:
-        "Al-Wadaq Wallpaper Manufacturing Co. Ltd operates in Babel Province, Iraq. We focus on material quality, printing accuracy, and color consistency, with continuous design development to match market taste.",
-      about_vision_t: "Our Vision",
-      about_vision_p: "To be Iraq’s leading locally manufactured wallpaper brand in quality and variety.",
-      about_values_t: "Our Values",
-      about_val1: "Quality and operational discipline.",
-      about_val2: "Specification and order transparency.",
-      about_val3: "Innovation in design and materials.",
-      about_val4: "Customer service and supply partnerships.",
-
-      prod_badge: "Products",
-      prod_title: "Wallpaper products across materials and finish options.",
-      prod_p:
-        "Choose the suitable category and request samples or a quote. Project-specific specs are available based on quantity.",
-      prod_cta_contact: "Request Samples/Quote",
-
-      p1_tag: "Vinyl",
-      p1_name: "Vinyl Wallpaper",
-      p1_desc: "Better moisture resistance and easy cleaning for homes and offices.",
-
-      p2_tag: "Non-woven",
-      p2_name: "Non-woven Wallpaper",
-      p2_desc: "Easier installation and strong stability for large areas and projects.",
-
-      p3_tag: "Classic",
-      p3_name: "Classic Collection",
-      p3_desc: "Traditional patterns and balanced colors for classic interiors.",
-
-      p4_tag: "Modern",
-      p4_name: "Modern Collection",
-      p4_desc: "Clean lines and contemporary designs for a modern look.",
-
-      p5_tag: "Kids",
-      p5_name: "Kids Rooms",
-      p5_desc: "Cheerful colors and safe options for children’s rooms.",
-
-      p6_tag: "Custom",
-      p6_name: "Project Customization",
-      p6_desc: "Custom design/specification available subject to minimum order quantity.",
-
-      contact_badge: "Contact",
-      contact_title: "Samples, wholesale pricing, or project supply — contact us.",
-      contact_p:
-        "Fill the form and we will respond. This template is ready to connect to your email/CRM in production.",
-      c_company: "Company (optional)",
-      c_name: "Full name",
-      c_email: "Email",
-      c_phone: "Phone (optional)",
-      c_need: "Inquiry type",
-      c_details: "Details",
-      c_submit: "Send",
-
-      need1: "Samples",
-      need2: "Wholesale pricing",
-      need3: "Project supply",
-      need4: "Distribution partnership",
-
-      contact_info_title: "Company Details",
-      city: "Babel, Iraq",
-      map_title: "Location on Map",
-      whatsapp_btn: "WhatsApp"
-    }
-  };
-
-  function toast(msg) {
-    const el = document.getElementById("toast");
-    if (!el) return alert(msg);
-    el.textContent = msg;
-    el.classList.add("show");
-    setTimeout(() => el.classList.remove("show"), 2800);
-  }
-
-  function getLang() {
-    return localStorage.getItem(LS_LANG) || "ar";
-  }
-
-  function setLang(lang) {
-    localStorage.setItem(LS_LANG, lang);
-  }
-
-  function applyI18n(lang) {
-    const dict = I18N[lang] || I18N.ar;
-
-    // dir + lang
-    document.documentElement.setAttribute("lang", lang);
-    document.documentElement.setAttribute("dir", dict.dir);
-
-    // Apply all data-i18n keys
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if (dict[key] !== undefined) el.textContent = dict[key];
-    });
-
-    // placeholders
-    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
-      const key = el.getAttribute("data-i18n-placeholder");
-      if (dict[key] !== undefined) el.setAttribute("placeholder", dict[key]);
-    });
-
-    // select options
-    document.querySelectorAll("[data-i18n-value]").forEach(el => {
-      const key = el.getAttribute("data-i18n-value");
-      if (dict[key] !== undefined) el.textContent = dict[key];
-    });
-
-    // language button label
-    const btn = document.getElementById("langBtn");
-    if (btn) btn.textContent = dict.lang_btn;
-
-    // Active link highlight
-    const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-    document.querySelectorAll('[data-nav]').forEach(a => {
-      const target = (a.getAttribute("href") || "").toLowerCase();
-      a.classList.toggle("active", target === path);
-    });
-  }
-
-  // Mobile menu
-  const menuBtn = document.getElementById("menuBtn");
-  const navLinks = document.getElementById("navLinks");
-  if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
-  }
-
-  // Language toggle
-  const langBtn = document.getElementById("langBtn");
-  if (langBtn) {
-    langBtn.addEventListener("click", () => {
-      const current = getLang();
-      const next = current === "ar" ? "en" : "ar";
-      setLang(next);
-      applyI18n(next);
-      toast(next === "ar" ? "تم التبديل للعربية." : "Switched to English.");
-    });
-  }
-
-  // Contact form (demo-ready; connect to backend/email later)
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = document.getElementById("cName")?.value?.trim();
-      const email = document.getElementById("cEmail")?.value?.trim();
-      const details = document.getElementById("cDetails")?.value?.trim();
-
-      if (!name || !email || !details) {
-        toast(getLang() === "ar" ? "يرجى إدخال الاسم والبريد والتفاصيل." : "Please enter name, email, and details.");
-        return;
-      }
-
-      // Store locally as a demo; replace with API call in production
-      const payload = {
-        company: document.getElementById("cCompany")?.value?.trim() || "",
-        name,
-        email,
-        phone: document.getElementById("cPhone")?.value?.trim() || "",
-        need: document.getElementById("cNeed")?.value || "",
-        details,
-        at: new Date().toISOString()
-      };
-
-      const key = "alwadaq_leads";
-      const items = JSON.parse(localStorage.getItem(key) || "[]");
-      items.unshift(payload);
-      localStorage.setItem(key, JSON.stringify(items));
-
-      toast(getLang() === "ar" ? "تم إرسال الطلب بنجاح." : "Your request has been sent.");
-      contactForm.reset();
-    });
-  }
-
-  // Init
-  const y = document.getElementById("year");
-  if (y) y.textContent = new Date().getFullYear();
-  applyI18n(getLang());
-})();
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/i18n.js"></script>
+</body>
+</html>
