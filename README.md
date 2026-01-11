@@ -1,172 +1,330 @@
-:root{
-  --bg:#0b1220;
-  --card:#101a33;
-  --text:#eaf0ff;
-  --muted:#a9b3c9;
-  --brand:#7dd3fc;
-  --brand2:#86efac;
-  --border:rgba(255,255,255,.10);
-  --shadow:0 10px 30px rgba(0,0,0,.35);
-  --radius:18px;
-  --max:1120px;
-  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, "Noto Sans Arabic", "Noto Sans", sans-serif;
-}
+(function () {
+  const LS_LANG = "alwadaq_lang";
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family:var(--font);
-  background:
-    radial-gradient(900px 600px at 10% 10%, rgba(125,211,252,.20), transparent 60%),
-    radial-gradient(900px 600px at 90% 20%, rgba(134,239,172,.18), transparent 60%),
-    radial-gradient(800px 500px at 60% 90%, rgba(125,211,252,.12), transparent 60%),
-    var(--bg);
-  color:var(--text);
-  line-height:1.7;
-}
+  const I18N = {
+    ar: {
+      dir: "rtl",
+      nav_home: "الرئيسية",
+      nav_about: "من نحن",
+      nav_products: "المنتجات",
+      nav_contact: "تواصل معنا",
+      lang_btn: "English",
 
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block;border-radius:14px}
-.container{max-width:var(--max);margin:0 auto;padding:0 18px}
-.section{padding:64px 0}
-.grid{display:grid;gap:18px}
+      // Shared footer
+      footer_tagline: "شركة الودق لصناعة ورق الجدران المحدودة — العراق، بابل",
+      footer_rights: "جميع الحقوق محفوظة",
+      phone_label: "الهاتف",
+      email_label: "البريد",
+      address_label: "العنوان",
 
-.card{
-  background:rgba(16,26,51,.70);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:18px;
-}
+      // Home
+      home_badge: "مصنع ورق جدران — جودة وتصاميم معاصرة",
+      home_title: "شركة الودق لصناعة ورق الجدران المحدودة",
+      home_sub:
+        "نصنع ورق جدران بمواصفات تشغيلية عالية، مع تنوع واسع في الخامات والتشطيبات. نخدم الأسواق المحلية والمشاريع التجارية والسكنية في العراق.",
+      home_cta_products: "استعراض المنتجات",
+      home_cta_quote: "اطلب عرض سعر",
+      kpi1: "تصاميم متعددة",
+      kpi2: "خامات وتشطيبات",
+      kpi3: "توريد للمشاريع",
+      kpi4: "ضبط جودة",
 
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:8px 12px;border:1px solid var(--border);
-  border-radius:999px;background:rgba(255,255,255,.06);
-  color:var(--muted);font-size:14px;
-}
+      home_why_title: "لماذا الودق؟",
+      home_why_1_t: "جودة قابلة للقياس",
+      home_why_1_d: "رقابة على السماكة، ثبات اللون، ومقاومة الاستخدام وفق متطلبات المشاريع.",
+      home_why_2_t: "تنوع في المواد",
+      home_why_2_d: "Vinyl، Non-woven، وتشطيبات مطفية/لامعة حسب خطوط المنتج.",
+      home_why_3_t: "جاهزية توريد",
+      home_why_3_d: "إدارة طلبات وجدولة تسليم لدعم المقاولين والموزعين.",
 
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  padding:12px 16px;border-radius:14px;border:1px solid var(--border);
-  background:rgba(255,255,255,.06);color:var(--text);
-  cursor:pointer;transition:.2s transform,.2s background,.2s border-color;
-}
-.btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.18)}
-.btn.primary{
-  background:linear-gradient(90deg, rgba(125,211,252,.95), rgba(134,239,172,.85));
-  color:#04101b;border-color:transparent;font-weight:800;
-}
-.btn.ghost{background:transparent}
+      home_services_title: "ماذا نقدم؟",
+      home_services_li1: "ورق جدران للاستخدام السكني والتجاري.",
+      home_services_li2: "تشكيلات مودرن وكلاسيك وخيارات حسب الطلب للمشاريع.",
+      home_services_li3: "توصيات تركيب وخدمات دعم للموزعين.",
+      home_services_li4: "تسعير بالجملة للموزعين وشركات التنفيذ.",
 
-.hr{height:1px;background:var(--border);margin:18px 0}
+      // About
+      about_badge: "من نحن",
+      about_title: "خبرة صناعية محلية تدعم جودة المنتج واستقرار التوريد.",
+      about_p:
+        "شركة الودق لصناعة ورق الجدران المحدودة تعمل في محافظة بابل — العراق. نركز على جودة المواد، دقة الطباعة، وثبات الألوان مع تطوير مستمر في التصاميم بما يلائم ذوق السوق.",
+      about_vision_t: "رؤيتنا",
+      about_vision_p: "أن نكون الخيار الأول لورق الجدران المصنّع محلياً في العراق من حيث الجودة والتنوع.",
+      about_values_t: "قيمنا",
+      about_val1: "الجودة والانضباط التشغيلي.",
+      about_val2: "الشفافية في المواصفات والطلب.",
+      about_val3: "الابتكار في التصميم والخامة.",
+      about_val4: "خدمة العملاء وشراكات التوريد.",
 
-.nav{
-  position:sticky;top:0;z-index:50;
-  backdrop-filter: blur(10px);
-  background: rgba(11,18,32,.65);
-  border-bottom:1px solid var(--border);
-}
-.navbar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:14px 0;gap:14px;flex-wrap:wrap;
-}
-.brand{
-  display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.2px
-}
-.logo{
-  width:38px;height:38px;border-radius:14px;
-  background: linear-gradient(135deg, rgba(125,211,252,.95), rgba(134,239,172,.85));
-  box-shadow: 0 10px 25px rgba(125,211,252,.18);
-}
-.links{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.link{
-  padding:10px 12px;border-radius:12px;color:var(--muted);
-  border:1px solid transparent;
-}
-.link:hover{color:var(--text);border-color:var(--border);background:rgba(255,255,255,.06)}
-.link.active{color:var(--text);background:rgba(255,255,255,.08);border-color:var(--border)}
-.nav-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.menu-btn{display:none}
+      // Products
+      prod_badge: "المنتجات",
+      prod_title: "منتجات ورق جدران بخيارات متعددة للخامة والتشطيب.",
+      prod_p:
+        "اختر الفئة المناسبة واطلب عينات أو عرض سعر. يمكن توفير مواصفات خاصة للمشاريع حسب الكمية.",
+      prod_cta_contact: "اطلب عينات/سعر",
 
-.hero{
-  display:grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap:18px;
-  align-items:stretch;
-}
-.hero h1{margin:10px 0 0;font-size:42px;line-height:1.2}
-.hero p{color:var(--muted);margin:14px 0 18px}
-.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+      p1_tag: "Vinyl",
+      p1_name: "ورق جدران فينيل",
+      p1_desc: "مقاومة أعلى للرطوبة وسهولة تنظيف، مناسب للمنازل والمكاتب.",
 
-.kpis{
-  display:grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap:14px;
-}
-.kpi{padding:16px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.05)}
-.kpi strong{display:block;font-size:22px}
-.kpi span{color:var(--muted);font-size:13px}
+      p2_tag: "Non-woven",
+      p2_name: "Non-woven",
+      p2_desc: "تركيب أسهل وثبات أفضل، مناسب لمساحات كبيرة ومشاريع.",
 
-.products{
-  grid-template-columns: repeat(3, minmax(0,1fr));
-}
-.product h3{margin:10px 0 6px}
-.product p{margin:0;color:var(--muted)}
-.tag{
-  display:inline-block;
-  padding:6px 10px;border-radius:999px;
-  background:rgba(125,211,252,.12);
-  border:1px solid rgba(125,211,252,.22);
-  font-size:13px;
-}
+      p3_tag: "Classic",
+      p3_name: "كلاسيك",
+      p3_desc: "نقوش كلاسيكية وألوان متوازنة للديكورات التقليدية.",
 
-form{display:grid;gap:12px}
-label{font-size:14px;color:var(--muted)}
-input,textarea,select{
-  width:100%;padding:12px 12px;border-radius:14px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.05);color:var(--text);
-  outline:none;
-}
-textarea{min-height:130px;resize:vertical}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+      p4_tag: "Modern",
+      p4_name: "مودرن",
+      p4_desc: "تصاميم عصرية وخطوط بسيطة لمظهر حديث.",
 
-.footer{
-  padding:28px 0;border-top:1px solid var(--border);
-  color:var(--muted);background: rgba(11,18,32,.55);
-}
-.footer .row{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}
-.small{font-size:13px;color:var(--muted)}
+      p5_tag: "Kids",
+      p5_name: "غرف الأطفال",
+      p5_desc: "ألوان مبهجة وخيارات آمنة مناسبة لغرف الأطفال.",
 
-.notice{
-  border:1px dashed rgba(255,255,255,.22);
-  background:rgba(255,255,255,.04);
-  border-radius:16px;padding:12px 14px;color:var(--muted);
-}
+      p6_tag: "Custom",
+      p6_name: "حسب الطلب للمشاريع",
+      p6_desc: "تنفيذ تصميم/مواصفة خاصة عند توفر الحد الأدنى للطلب.",
 
-.toast{
-  position:fixed;bottom:18px;left:18px;
-  background:rgba(16,26,51,.92);
-  border:1px solid var(--border);
-  border-radius:16px;padding:12px 14px;
-  box-shadow:var(--shadow);
-  min-width: 240px;
-  display:none;
-}
-.toast.show{display:block}
+      // Contact
+      contact_badge: "تواصل معنا",
+      contact_title: "للعينات، التسعير بالجملة، أو توريد المشاريع — تواصل الآن.",
+      contact_p:
+        "املأ النموذج وسنرد عليك. في الموقع الحقيقي يتم ربط النموذج ببريد الشركة/CRM (هنا نسخة جاهزة للربط).",
+      c_company: "الشركة (اختياري)",
+      c_name: "الاسم",
+      c_email: "البريد الإلكتروني",
+      c_phone: "الهاتف (اختياري)",
+      c_need: "نوع الطلب",
+      c_details: "تفاصيل الطلب",
+      c_submit: "إرسال",
 
-/* responsive */
-@media (max-width: 960px){
-  .hero{grid-template-columns: 1fr}
-  .kpis{grid-template-columns: repeat(2, minmax(0,1fr))}
-  .products{grid-template-columns: repeat(2, minmax(0,1fr))}
-}
-@media (max-width: 680px){
-  .menu-btn{display:inline-flex}
-  .links{display:none;width:100%;flex-direction:column;align-items:stretch;padding:10px 0 0}
-  .links.open{display:flex}
-  .two{grid-template-columns: 1fr}
-  .products{grid-template-columns: 1fr}
-  .hero h1{font-size:34px}
-}
+      need1: "عينات",
+      need2: "تسعير جملة",
+      need3: "مشروع (توريد)",
+      need4: "شراكة توزيع",
+
+      contact_info_title: "بيانات الشركة",
+      city: "العراق — بابل",
+      map_title: "الموقع على الخريطة",
+      whatsapp_btn: "واتساب"
+    },
+
+    en: {
+      dir: "ltr",
+      nav_home: "Home",
+      nav_about: "About",
+      nav_products: "Products",
+      nav_contact: "Contact",
+      lang_btn: "العربية",
+
+      footer_tagline: "Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq",
+      footer_rights: "All rights reserved",
+      phone_label: "Phone",
+      email_label: "Email",
+      address_label: "Address",
+
+      home_badge: "Wallpaper manufacturer — quality and modern designs",
+      home_title: "Al-Wadaq Wallpaper Manufacturing Co. Ltd",
+      home_sub:
+        "We manufacture high-quality wallpapers with a wide range of materials and finishes. We serve local Iraqi markets and support residential and commercial projects.",
+      home_cta_products: "View Products",
+      home_cta_quote: "Request a Quote",
+      kpi1: "Multiple designs",
+      kpi2: "Materials & finishes",
+      kpi3: "Project supply",
+      kpi4: "Quality control",
+
+      home_why_title: "Why Al-Wadaq?",
+      home_why_1_t: "Measurable quality",
+      home_why_1_d: "Controls for thickness, color consistency, and durability based on project needs.",
+      home_why_2_t: "Material variety",
+      home_why_2_d: "Vinyl, non-woven, and matte/gloss finishes across product lines.",
+      home_why_3_t: "Supply readiness",
+      home_why_3_d: "Order management and delivery scheduling for contractors and distributors.",
+
+      home_services_title: "What we offer",
+      home_services_li1: "Wallpaper for residential and commercial use.",
+      home_services_li2: "Modern/classic collections and project-ready customization options.",
+      home_services_li3: "Installation guidance and distributor support.",
+      home_services_li4: "Wholesale pricing for distributors and contractors.",
+
+      about_badge: "About",
+      about_title: "Local manufacturing with dependable quality and stable supply.",
+      about_p:
+        "Al-Wadaq Wallpaper Manufacturing Co. Ltd operates in Babel Province, Iraq. We focus on material quality, printing accuracy, and color consistency, with continuous design development to match market taste.",
+      about_vision_t: "Our Vision",
+      about_vision_p: "To be Iraq’s leading locally manufactured wallpaper brand in quality and variety.",
+      about_values_t: "Our Values",
+      about_val1: "Quality and operational discipline.",
+      about_val2: "Specification and order transparency.",
+      about_val3: "Innovation in design and materials.",
+      about_val4: "Customer service and supply partnerships.",
+
+      prod_badge: "Products",
+      prod_title: "Wallpaper products across materials and finish options.",
+      prod_p:
+        "Choose the suitable category and request samples or a quote. Project-specific specs are available based on quantity.",
+      prod_cta_contact: "Request Samples/Quote",
+
+      p1_tag: "Vinyl",
+      p1_name: "Vinyl Wallpaper",
+      p1_desc: "Better moisture resistance and easy cleaning for homes and offices.",
+
+      p2_tag: "Non-woven",
+      p2_name: "Non-woven Wallpaper",
+      p2_desc: "Easier installation and strong stability for large areas and projects.",
+
+      p3_tag: "Classic",
+      p3_name: "Classic Collection",
+      p3_desc: "Traditional patterns and balanced colors for classic interiors.",
+
+      p4_tag: "Modern",
+      p4_name: "Modern Collection",
+      p4_desc: "Clean lines and contemporary designs for a modern look.",
+
+      p5_tag: "Kids",
+      p5_name: "Kids Rooms",
+      p5_desc: "Cheerful colors and safe options for children’s rooms.",
+
+      p6_tag: "Custom",
+      p6_name: "Project Customization",
+      p6_desc: "Custom design/specification available subject to minimum order quantity.",
+
+      contact_badge: "Contact",
+      contact_title: "Samples, wholesale pricing, or project supply — contact us.",
+      contact_p:
+        "Fill the form and we will respond. This template is ready to connect to your email/CRM in production.",
+      c_company: "Company (optional)",
+      c_name: "Full name",
+      c_email: "Email",
+      c_phone: "Phone (optional)",
+      c_need: "Inquiry type",
+      c_details: "Details",
+      c_submit: "Send",
+
+      need1: "Samples",
+      need2: "Wholesale pricing",
+      need3: "Project supply",
+      need4: "Distribution partnership",
+
+      contact_info_title: "Company Details",
+      city: "Babel, Iraq",
+      map_title: "Location on Map",
+      whatsapp_btn: "WhatsApp"
+    }
+  };
+
+  function toast(msg) {
+    const el = document.getElementById("toast");
+    if (!el) return alert(msg);
+    el.textContent = msg;
+    el.classList.add("show");
+    setTimeout(() => el.classList.remove("show"), 2800);
+  }
+
+  function getLang() {
+    return localStorage.getItem(LS_LANG) || "ar";
+  }
+
+  function setLang(lang) {
+    localStorage.setItem(LS_LANG, lang);
+  }
+
+  function applyI18n(lang) {
+    const dict = I18N[lang] || I18N.ar;
+
+    // dir + lang
+    document.documentElement.setAttribute("lang", lang);
+    document.documentElement.setAttribute("dir", dict.dir);
+
+    // Apply all data-i18n keys
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+
+    // placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (dict[key] !== undefined) el.setAttribute("placeholder", dict[key]);
+    });
+
+    // select options
+    document.querySelectorAll("[data-i18n-value]").forEach(el => {
+      const key = el.getAttribute("data-i18n-value");
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+
+    // language button label
+    const btn = document.getElementById("langBtn");
+    if (btn) btn.textContent = dict.lang_btn;
+
+    // Active link highlight
+    const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    document.querySelectorAll('[data-nav]').forEach(a => {
+      const target = (a.getAttribute("href") || "").toLowerCase();
+      a.classList.toggle("active", target === path);
+    });
+  }
+
+  // Mobile menu
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
+  }
+
+  // Language toggle
+  const langBtn = document.getElementById("langBtn");
+  if (langBtn) {
+    langBtn.addEventListener("click", () => {
+      const current = getLang();
+      const next = current === "ar" ? "en" : "ar";
+      setLang(next);
+      applyI18n(next);
+      toast(next === "ar" ? "تم التبديل للعربية." : "Switched to English.");
+    });
+  }
+
+  // Contact form (demo-ready; connect to backend/email later)
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("cName")?.value?.trim();
+      const email = document.getElementById("cEmail")?.value?.trim();
+      const details = document.getElementById("cDetails")?.value?.trim();
+
+      if (!name || !email || !details) {
+        toast(getLang() === "ar" ? "يرجى إدخال الاسم والبريد والتفاصيل." : "Please enter name, email, and details.");
+        return;
+      }
+
+      // Store locally as a demo; replace with API call in production
+      const payload = {
+        company: document.getElementById("cCompany")?.value?.trim() || "",
+        name,
+        email,
+        phone: document.getElementById("cPhone")?.value?.trim() || "",
+        need: document.getElementById("cNeed")?.value || "",
+        details,
+        at: new Date().toISOString()
+      };
+
+      const key = "alwadaq_leads";
+      const items = JSON.parse(localStorage.getItem(key) || "[]");
+      items.unshift(payload);
+      localStorage.setItem(key, JSON.stringify(items));
+
+      toast(getLang() === "ar" ? "تم إرسال الطلب بنجاح." : "Your request has been sent.");
+      contactForm.reset();
+    });
+  }
+
+  // Init
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+  applyI18n(getLang());
+})();
