@@ -1,238 +1,501 @@
-{
-  --bg:#0b0f15;
-  --card:#0f1624;
-  --muted:#a9b4c7;
-  --text:#eef3ff;
-  --brand:#67b7ff;
-  --brand2:#7c5cff;
-  --border:rgba(255,255,255,.10);
-  --shadow: 0 18px 45px rgba(0,0,0,.35);
-  --radius:18px;
-  --container:1100px;
-}
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 600px at 20% 0%, rgba(124,92,255,.15), transparent 60%),
-              radial-gradient(900px 500px at 90% 20%, rgba(103,183,255,.14), transparent 55%),
-              var(--bg);
-  color:var(--text);
-  line-height:1.6;
-}
+  <title>Al-Wadaq Wallpaper | شركة الودق لصناعة ورق الجدران المحدودة</title>
+  <meta name="description" content="Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq. Manufacturer of wallpapers with multiple materials and finishes for residential and commercial projects." />
 
-a{color:inherit; text-decoration:none}
-.container{max-width:var(--container); margin:0 auto; padding:0 18px}
-.section{padding:46px 0}
-.grid{display:grid; gap:16px}
-.card{
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-  border:1px solid var(--border);
-  border-radius: var(--radius);
-  padding:18px;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(8px);
-}
-.hr{height:1px; background:var(--border); margin:16px 0}
-.small{font-size:.92rem; color:var(--muted)}
-.badge{
-  display:inline-flex;
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  color:var(--muted);
-  font-size:.85rem;
-  background: rgba(255,255,255,.03);
-}
+  <!-- Open Graph -->
+  <meta property="og:title" content="Al-Wadaq Wallpaper Manufacturing Co. Ltd" />
+  <meta property="og:description" content="Wallpaper manufacturer in Babel, Iraq — materials, finishes, and project supply." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_IQ" />
 
-/* NAV */
-.nav{
-  position:sticky; top:0; z-index:50;
-  background: rgba(11,15,21,.55);
-  border-bottom:1px solid var(--border);
-  backdrop-filter: blur(10px);
-}
-.navbar{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:12px 0; gap:12px;
-}
-.brand{
-  display:flex; align-items:center; gap:10px;
-  font-weight:800;
-  letter-spacing:.3px;
-}
-.logo{
-  width:34px; height:34px; border-radius:10px;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,0) 55%),
-    linear-gradient(135deg, var(--brand), var(--brand2));
-  box-shadow: 0 10px 30px rgba(103,183,255,.18);
-}
-.links{
-  display:flex; align-items:center; gap:14px;
-  padding:8px 10px;
-  border:1px solid var(--border);
-  border-radius:999px;
-  background: rgba(255,255,255,.03);
-}
-.link{
-  padding:8px 10px;
-  border-radius:999px;
-  color:var(--muted);
-  transition: .2s ease;
-  font-weight:700;
-  font-size:.95rem;
-}
-.link:hover{color:var(--text); background: rgba(255,255,255,.06)}
-.link.active{color:var(--text); background: rgba(103,183,255,.14); border:1px solid rgba(103,183,255,.22)}
-.nav-actions{display:flex; align-items:center; gap:10px}
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
 
-/* BUTTONS */
-.btn{
-  border:1px solid var(--border);
-  background: rgba(255,255,255,.03);
-  color:var(--text);
-  padding:10px 12px;
-  border-radius:12px;
-  cursor:pointer;
-  font-weight:800;
-  transition:.2s ease;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-}
-.btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06)}
-.btn.primary{
-  border-color: rgba(103,183,255,.35);
-  background: linear-gradient(135deg, rgba(103,183,255,.20), rgba(124,92,255,.18));
-}
-.menu-btn{display:none}
+  <header class="nav">
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="index.html" aria-label="Al-Wadaq">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Al-Wadaq</span>
+        </a>
 
-/* HERO */
-.hero{
-  display:grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap:16px;
-  align-items:stretch;
-}
-h1{margin:10px 0 0; font-size:2rem; line-height:1.2}
-h2{margin:0 0 10px; font-size:1.3rem}
-h3{margin:10px 0 0; font-size:1.05rem}
-p{margin:10px 0 0; color:var(--muted)}
-.actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+        <button id="menuBtn" class="btn menu-btn" type="button">Menu</button>
 
-.kpis{
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap:10px;
-}
-.kpi{
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:10px 12px;
-  background: rgba(255,255,255,.03);
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  font-size:.95rem;
-}
-.kpi strong{color:var(--text)}
-.kpi span{color:var(--muted)}
+        <nav id="navLinks" class="links" aria-label="Navigation">
+          <a class="link" data-nav href="index.html" data-i18n="nav_home">Home</a>
+          <a class="link" data-nav href="about.html" data-i18n="nav_about">About</a>
+          <a class="link" data-nav href="products.html" data-i18n="nav_products">Products</a>
+          <a class="link" data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
+        </nav>
 
-/* PRODUCTS */
-.products{
-  grid-template-columns: repeat(3, 1fr);
-}
-.product .tag{
-  display:inline-flex;
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid rgba(103,183,255,.26);
-  background: rgba(103,183,255,.10);
-  color: var(--text);
-  font-weight:900;
-  font-size:.85rem;
-}
+        <div class="nav-actions">
+          <button id="langBtn" class="btn" type="button">English</button>
+          <a class="btn primary" href="contact.html" data-i18n="home_cta_quote">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-/* FORMS */
-label{display:block; font-weight:900; margin:12px 0 6px}
-input, textarea, select{
-  width:100%;
-  padding:12px 12px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  background: rgba(0,0,0,.15);
-  color:var(--text);
-  outline:none;
-}
-textarea{min-height:120px; resize:vertical}
-.two{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-.notice{
-  border:1px solid var(--border);
-  background: rgba(0,0,0,.18);
-  border-radius: 14px;
-  padding:12px 12px;
-  color: var(--muted);
-  margin-top: 12px;
-}
+  <main>
+    <section class="section">
+      <div class="container hero">
+        <div class="card">
+          <span class="badge" data-i18n="home_badge">Wallpaper manufacturer — quality and modern designs</span>
+          <h1 data-i18n="home_title">Al-Wadaq Wallpaper Manufacturing Co. Ltd</h1>
+          <p data-i18n="home_sub">
+            We manufacture high-quality wallpapers with a wide range of materials and finishes...
+          </p>
 
-/* FOOTER */
-.footer{
-  border-top:1px solid var(--border);
-  padding:24px 0;
-  background: rgba(255,255,255,.02);
-}
-.row{
-  display:flex; gap:16px; align-items:flex-start; justify-content:space-between;
-  flex-wrap:wrap;
-}
+          <div class="actions">
+            <a class="btn primary" href="products.html" data-i18n="home_cta_products">View Products</a>
+            <a class="btn" href="contact.html" data-i18n="home_cta_quote">Request a Quote</a>
+          </div>
 
-/* TOAST */
-.toast{
-  position: fixed;
-  left: 16px;
-  bottom: 16px;
-  min-width: 260px;
-  max-width: 360px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(0,0,0,.55);
-  border: 1px solid var(--border);
-  color: var(--text);
-  box-shadow: var(--shadow);
-  opacity: 0;
-  transform: translateY(12px);
-  pointer-events:none;
-  transition: .25s ease;
-}
-.toast.show{opacity:1; transform: translateY(0)}
+          <div class="hr"></div>
 
-/* RESPONSIVE */
-@media (max-width: 980px){
-  .hero{grid-template-columns:1fr}
-  .products{grid-template-columns: repeat(2, 1fr)}
-}
-@media (max-width: 820px){
-  .menu-btn{display:inline-block}
-  .links{
-    display:none;
-    position:absolute;
-    top:60px;
-    left:18px;
-    right:18px;
-    border-radius:16px;
-    flex-direction:column;
-    align-items:stretch;
-    padding:10px;
-  }
-  .links.open{display:flex}
-  .navbar{position:relative}
-  .two{grid-template-columns:1fr}
-  .products{grid-template-columns: 1fr}
-}
+          <div class="kpis">
+            <div class="kpi"><strong data-i18n="kpi1">Multiple designs</strong><span>—</span></div>
+            <div class="kpi"><strong data-i18n="kpi2">Materials & finishes</strong><span>—</span></div>
+            <div class="kpi"><strong data-i18n="kpi3">Project supply</strong><span>—</span></div>
+            <div class="kpi"><strong data-i18n="kpi4">Quality control</strong><span>—</span></div>
+          </div>
+        </div>
 
-/* Utility */
-.mt0{margin-top:0}
+        <div class="card">
+          <h2 style="margin-top:0;" data-i18n="home_why_title">Why Al-Wadaq?</h2>
+
+          <div class="grid" style="margin-top:14px;">
+            <div class="card" style="background:rgba(255,255,255,.04);">
+              <strong data-i18n="home_why_1_t">Measurable quality</strong>
+              <div class="small" data-i18n="home_why_1_d">Controls for thickness, color consistency...</div>
+            </div>
+            <div class="card" style="background:rgba(255,255,255,.04);">
+              <strong data-i18n="home_why_2_t">Material variety</strong>
+              <div class="small" data-i18n="home_why_2_d">Vinyl, non-woven...</div>
+            </div>
+            <div class="card" style="background:rgba(255,255,255,.04);">
+              <strong data-i18n="home_why_3_t">Supply readiness</strong>
+              <div class="small" data-i18n="home_why_3_d">Order management and delivery scheduling...</div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="notice">
+            <div><strong data-i18n="address_label">Address</strong>: <span data-i18n="city">Babel, Iraq</span></div>
+            <div style="margin-top:6px;"><strong data-i18n="phone_label">Phone</strong>: +964 7XX XXX XXXX</div>
+            <div><strong data-i18n="email_label">Email</strong>: info@alwadaq-wallpaper.com</div>
+            <div class="small" style="margin-top:8px;">
+              ملاحظة: استبدل الهاتف والبريد بالداتا الحقيقية قبل النشر.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container grid" style="grid-template-columns:1fr 1fr; align-items:stretch;">
+        <div class="card">
+          <h2 style="margin-top:0;" data-i18n="home_services_title">What we offer</h2>
+          <ul style="color:var(--muted);margin:10px 0 0; padding-inline-start:18px;">
+            <li data-i18n="home_services_li1">Wallpaper for residential and commercial use.</li>
+            <li data-i18n="home_services_li2">Modern/classic collections and project-ready customization options.</li>
+            <li data-i18n="home_services_li3">Installation guidance and distributor support.</li>
+            <li data-i18n="home_services_li4">Wholesale pricing for distributors and contractors.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 style="margin-top:0;">Quick Links</h2>
+          <p class="small">Explore products or send an inquiry.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a class="btn primary" href="products.html" data-i18n="nav_products">Products</a>
+            <a class="btn" href="contact.html" data-i18n="nav_contact">Contact</a>
+            <a class="btn" href="about.html" data-i18n="nav_about">About</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="brand" style="margin-bottom:8px;">
+            <span class="logo" aria-hidden="true"></span>
+            <span>Al-Wadaq</span>
+          </div>
+          <div class="small" data-i18n="footer_tagline">Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq</div>
+        </div>
+
+        <div class="small">
+          <div><span data-i18n="phone_label">Phone</span>: +964 7XX XXX XXXX</div>
+          <div><span data-i18n="email_label">Email</span>: info@alwadaq-wallpaper.com</div>
+          <div>© <span id="year"></span> Al-Wadaq — <span data-i18n="footer_rights">All rights reserved</span></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/i18n.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al-Wadaq | About - شركة الودق</title>
+  <meta name="description" content="About Al-Wadaq Wallpaper Manufacturing Co. Ltd in Babel, Iraq." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="index.html"><span class="logo"></span><span>Al-Wadaq</span></a>
+        <button id="menuBtn" class="btn menu-btn" type="button">Menu</button>
+
+        <nav id="navLinks" class="links">
+          <a class="link" data-nav href="index.html" data-i18n="nav_home">Home</a>
+          <a class="link" data-nav href="about.html" data-i18n="nav_about">About</a>
+          <a class="link" data-nav href="products.html" data-i18n="nav_products">Products</a>
+          <a class="link" data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button id="langBtn" class="btn" type="button">English</button>
+          <a class="btn primary" href="contact.html" data-i18n="home_cta_quote">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container grid" style="grid-template-columns:1.1fr .9fr; align-items:start;">
+        <div class="card">
+          <span class="badge" data-i18n="about_badge">About</span>
+          <h1 style="margin-top:10px;" data-i18n="about_title">Local manufacturing with dependable quality and stable supply.</h1>
+          <p style="color:var(--muted);" data-i18n="about_p">
+            Al-Wadaq Wallpaper Manufacturing Co. Ltd operates in Babel Province, Iraq...
+          </p>
+
+          <div class="hr"></div>
+
+          <h2 style="margin:0 0 10px;" data-i18n="about_vision_t">Our Vision</h2>
+          <p style="color:var(--muted);margin-top:0;" data-i18n="about_vision_p">
+            To be Iraq’s leading locally manufactured wallpaper brand...
+          </p>
+
+          <h2 style="margin:18px 0 10px;" data-i18n="about_values_t">Our Values</h2>
+          <ul style="color:var(--muted);margin:0; padding-inline-start:18px;">
+            <li data-i18n="about_val1">Quality and operational discipline.</li>
+            <li data-i18n="about_val2">Specification and order transparency.</li>
+            <li data-i18n="about_val3">Innovation in design and materials.</li>
+            <li data-i18n="about_val4">Customer service and supply partnerships.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 style="margin-top:0;" data-i18n="contact_info_title">Company Details</h2>
+          <div class="small" style="margin-top:10px;">
+            <div><strong data-i18n="address_label">Address</strong>: <span data-i18n="city">Babel, Iraq</span></div>
+            <div style="margin-top:6px;"><strong data-i18n="phone_label">Phone</strong>: +964 7XX XXX XXXX</div>
+            <div><strong data-i18n="email_label">Email</strong>: info@alwadaq-wallpaper.com</div>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="notice">
+            لتصبح نسخة “شركة حقيقية” أكثر: ضع رقم الهاتف والبريد الرسميين، وأضف شعار الشركة داخل assets/img.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="brand" style="margin-bottom:8px;"><span class="logo"></span><span>Al-Wadaq</span></div>
+          <div class="small" data-i18n="footer_tagline">Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq</div>
+        </div>
+        <div class="small">© <span id="year"></span> Al-Wadaq — <span data-i18n="footer_rights">All rights reserved</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/i18n.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al-Wadaq | Products - شركة الودق</title>
+  <meta name="description" content="Wallpaper products by Al-Wadaq — Vinyl, Non-woven, Classic, Modern, Kids, Custom projects." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="index.html"><span class="logo"></span><span>Al-Wadaq</span></a>
+        <button id="menuBtn" class="btn menu-btn" type="button">Menu</button>
+
+        <nav id="navLinks" class="links">
+          <a class="link" data-nav href="index.html" data-i18n="nav_home">Home</a>
+          <a class="link" data-nav href="about.html" data-i18n="nav_about">About</a>
+          <a class="link" data-nav href="products.html" data-i18n="nav_products">Products</a>
+          <a class="link" data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button id="langBtn" class="btn" type="button">English</button>
+          <a class="btn primary" href="contact.html" data-i18n="prod_cta_contact">Request Samples/Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <span class="badge" data-i18n="prod_badge">Products</span>
+          <h1 style="margin-top:10px;" data-i18n="prod_title">Wallpaper products across materials and finish options.</h1>
+          <p style="color:var(--muted);margin-bottom:0;" data-i18n="prod_p">
+            Choose the suitable category and request samples or a quote...
+          </p>
+        </div>
+
+        <div class="section" style="padding-bottom:0;">
+          <div class="grid products">
+            <div class="card product">
+              <span class="tag" data-i18n="p1_tag">Vinyl</span>
+              <h3 data-i18n="p1_name">Vinyl Wallpaper</h3>
+              <p data-i18n="p1_desc">Better moisture resistance...</p>
+            </div>
+
+            <div class="card product">
+              <span class="tag" data-i18n="p2_tag">Non-woven</span>
+              <h3 data-i18n="p2_name">Non-woven Wallpaper</h3>
+              <p data-i18n="p2_desc">Easier installation...</p>
+            </div>
+
+            <div class="card product">
+              <span class="tag" data-i18n="p3_tag">Classic</span>
+              <h3 data-i18n="p3_name">Classic Collection</h3>
+              <p data-i18n="p3_desc">Traditional patterns...</p>
+            </div>
+
+            <div class="card product">
+              <span class="tag" data-i18n="p4_tag">Modern</span>
+              <h3 data-i18n="p4_name">Modern Collection</h3>
+              <p data-i18n="p4_desc">Clean lines and contemporary designs...</p>
+            </div>
+
+            <div class="card product">
+              <span class="tag" data-i18n="p5_tag">Kids</span>
+              <h3 data-i18n="p5_name">Kids Rooms</h3>
+              <p data-i18n="p5_desc">Cheerful colors and safe options...</p>
+            </div>
+
+            <div class="card product">
+              <span class="tag" data-i18n="p6_tag">Custom</span>
+              <h3 data-i18n="p6_name">Project Customization</h3>
+              <p data-i18n="p6_desc">Custom design/specification...</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="card">
+            <h2 style="margin-top:0;">MOQ / Specifications</h2>
+            <p class="small">
+              في النسخة النهائية: أضف معلومات الخامة، عرض الرول، الطول، الوزن، ومقاومة الرطوبة، وحدّ الطلب الأدنى.
+            </p>
+            <a class="btn primary" href="contact.html" data-i18n="prod_cta_contact">Request Samples/Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="brand" style="margin-bottom:8px;"><span class="logo"></span><span>Al-Wadaq</span></div>
+          <div class="small" data-i18n="footer_tagline">Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq</div>
+        </div>
+        <div class="small">© <span id="year"></span> Al-Wadaq — <span data-i18n="footer_rights">All rights reserved</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/i18n.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al-Wadaq | Contact - شركة الودق</title>
+  <meta name="description" content="Contact Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq. Samples, wholesale pricing, and project supply." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="index.html"><span class="logo"></span><span>Al-Wadaq</span></a>
+        <button id="menuBtn" class="btn menu-btn" type="button">Menu</button>
+
+        <nav id="navLinks" class="links">
+          <a class="link" data-nav href="index.html" data-i18n="nav_home">Home</a>
+          <a class="link" data-nav href="about.html" data-i18n="nav_about">About</a>
+          <a class="link" data-nav href="products.html" data-i18n="nav_products">Products</a>
+          <a class="link" data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button id="langBtn" class="btn" type="button">English</button>
+          <!-- ضع رقم واتساب الحقيقي هنا -->
+          <a class="btn primary" href="https://wa.me/9647XXXXXXXXX" target="_blank" rel="noopener" data-i18n="whatsapp_btn">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container grid" style="grid-template-columns:1fr 1fr; align-items:start;">
+        <div class="card">
+          <span class="badge" data-i18n="contact_badge">Contact</span>
+          <h1 style="margin-top:10px;" data-i18n="contact_title">Samples, wholesale pricing, or project supply — contact us.</h1>
+          <p style="color:var(--muted);" data-i18n="contact_p">
+            Fill the form and we will respond...
+          </p>
+
+          <div class="hr"></div>
+
+          <form id="contactForm">
+            <div class="two">
+              <div>
+                <label data-i18n="c_company">Company (optional)</label>
+                <input id="cCompany" type="text" data-i18n-placeholder="c_company" placeholder="Company (optional)" />
+              </div>
+              <div>
+                <label data-i18n="c_name">Full name</label>
+                <input id="cName" type="text" required />
+              </div>
+            </div>
+
+            <div class="two">
+              <div>
+                <label data-i18n="c_email">Email</label>
+                <input id="cEmail" type="email" required />
+              </div>
+              <div>
+                <label data-i18n="c_phone">Phone (optional)</label>
+                <input id="cPhone" type="tel" />
+              </div>
+            </div>
+
+            <div>
+              <label data-i18n="c_need">Inquiry type</label>
+              <select id="cNeed">
+                <option value="samples" data-i18n-value="need1">Samples</option>
+                <option value="wholesale" data-i18n-value="need2">Wholesale pricing</option>
+                <option value="project" data-i18n-value="need3">Project supply</option>
+                <option value="distribution" data-i18n-value="need4">Distribution partnership</option>
+              </select>
+            </div>
+
+            <div>
+              <label data-i18n="c_details">Details</label>
+              <textarea id="cDetails" required></textarea>
+            </div>
+
+            <button class="btn primary" type="submit" data-i18n="c_submit">Send</button>
+
+            <div class="notice">
+              للتشغيل الحقيقي: استبدل التخزين المحلي بربط API (مثل Formspree/Netlify Forms أو Backend).
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2 style="margin-top:0;" data-i18n="contact_info_title">Company Details</h2>
+          <div class="small" style="margin-top:10px;">
+            <div><strong data-i18n="address_label">Address</strong>: <span data-i18n="city">Babel, Iraq</span></div>
+            <div style="margin-top:6px;"><strong data-i18n="phone_label">Phone</strong>: +964 7XX XXX XXXX</div>
+            <div><strong data-i18n="email_label">Email</strong>: info@alwadaq-wallpaper.com</div>
+          </div>
+
+          <div class="hr"></div>
+
+          <h3 style="margin:0 0 10px;" data-i18n="map_title">Location on Map</h3>
+          <!-- ضع رابط خرائط Google الحقيقي لموقع الشركة عند توفره -->
+          <iframe
+            title="Al-Wadaq Location"
+            style="width:100%;height:280px;border:0;border-radius:16px;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Babel%20Iraq&output=embed">
+          </iframe>
+
+          <div class="small" style="margin-top:10px;">
+            إذا أعطيتني رابط Google Maps لموقع الشركة بالضبط، أضعه هنا بشكل صحيح.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="brand" style="margin-bottom:8px;"><span class="logo"></span><span>Al-Wadaq</span></div>
+          <div class="small" data-i18n="footer_tagline">Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq</div>
+        </div>
+        <div class="small">© <span id="year"></span> Al-Wadaq — <span data-i18n="footer_rights">All rights reserved</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/i18n.js"></script>
+</body>
+</html>
+User-agent: *
+Allow: /
+
+Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://YOUR-DOMAIN.com/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.com/about.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.com/products.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.com/contact.html</loc></url>
+</urlset>
