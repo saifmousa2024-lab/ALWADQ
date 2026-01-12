@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Al-Wadaq Wallpaper | شركة الودق لصناعة ورق الجدران المحدودة</title>
   <meta name="description" content="Al-Wadaq Wallpaper Manufacturing Co. Ltd — Babel, Iraq. Manufacturer of wallpapers with multiple materials and finishes for residential and commercial projects." />
 
@@ -89,10 +88,9 @@
 
           <div class="notice">
             <div><strong data-i18n="address_label">Address</strong>: <span data-i18n="city">Babel, Iraq</span></div>
-            <div style="margin-top:6px;"><strong data-i18n="phone_label">Phone</strong>: +964 7XX XXX XXXX</div>
+            <div style="margin-top:6px;"><strong data-i18n="phone_label">Phone</strong>: +964 7800011111</div>
             <div><strong data-i18n="email_label">Email</strong>: info@alwadaq-wallpaper.com</div>
             <div class="small" style="margin-top:8px;">
-              ملاحظة: استبدل الهاتف والبريد بالداتا الحقيقية قبل النشر.
             </div>
           </div>
 
@@ -211,14 +209,14 @@
           <h2 style="margin-top:0;" data-i18n="contact_info_title">Company Details</h2>
           <div class="small" style="margin-top:10px;">
             <div><strong data-i18n="address_label">Address</strong>: <span data-i18n="city">Babel, Iraq</span></div>
-            <div style="margin-top:6px;"><strong data-i18n="phone_label">Phone</strong>: +964 7XX XXX XXXX</div>
+            <div style="margin-top:6px;"><strong data-i18n="phone_label">Phone</strong>: +964 7800011111</div>
             <div><strong data-i18n="email_label">Email</strong>: info@alwadaq-wallpaper.com</div>
           </div>
 
           <div class="hr"></div>
 
           <div class="notice">
-            لتصبح نسخة “شركة حقيقية” أكثر: ضع رقم الهاتف والبريد الرسميين، وأضف شعار الشركة داخل assets/img.
+         
           </div>
         </div>
       </div>
@@ -328,7 +326,7 @@
           <div class="card">
             <h2 style="margin-top:0;">MOQ / Specifications</h2>
             <p class="small">
-              في النسخة النهائية: أضف معلومات الخامة، عرض الرول، الطول، الوزن، ومقاومة الرطوبة، وحدّ الطلب الأدنى.
+           
             </p>
             <a class="btn primary" href="contact.html" data-i18n="prod_cta_contact">Request Samples/Quote</a>
           </div>
@@ -379,8 +377,8 @@
 
         <div class="nav-actions">
           <button id="langBtn" class="btn" type="button">English</button>
-          <!-- ضع رقم واتساب الحقيقي هنا -->
-          <a class="btn primary" href="https://wa.me/9647XXXXXXXXX" target="_blank" rel="noopener" data-i18n="whatsapp_btn">WhatsApp</a>
+          <9647800011111>
+          <a class="btn primary" href="https://wa.me/9647800011111" target="_blank" rel="noopener" data-i18n="whatsapp_btn">WhatsApp</a>
         </div>
       </div>
     </div>
@@ -439,7 +437,6 @@
             <button class="btn primary" type="submit" data-i18n="c_submit">Send</button>
 
             <div class="notice">
-              للتشغيل الحقيقي: استبدل التخزين المحلي بربط API (مثل Formspree/Netlify Forms أو Backend).
             </div>
           </form>
         </div>
@@ -455,7 +452,7 @@
           <div class="hr"></div>
 
           <h3 style="margin:0 0 10px;" data-i18n="map_title">Location on Map</h3>
-          <!-- ضع رابط خرائط Google الحقيقي لموقع الشركة عند توفره -->
+          
           <iframe
             title="Al-Wadaq Location"
             style="width:100%;height:280px;border:0;border-radius:16px;"
@@ -465,7 +462,7 @@
           </iframe>
 
           <div class="small" style="margin-top:10px;">
-            إذا أعطيتني رابط Google Maps لموقع الشركة بالضبط، أضعه هنا بشكل صحيح.
+          
           </div>
         </div>
       </div>
