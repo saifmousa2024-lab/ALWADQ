@@ -135,7 +135,7 @@
         </div>
 
         <div class="small">
-          <div><span data-i18n="phone_label">Phone</span>: +964 7XX XXX XXXX</div>
+          <div><span data-i18n="phone_label">Phone</span>: +964 7800011111</div>
           <div><span data-i18n="email_label">Email</span>: info@alwadaq-wallpaper.com</div>
           <div>© <span id="year"></span> Al-Wadaq — <span data-i18n="footer_rights">All rights reserved</span></div>
         </div>
